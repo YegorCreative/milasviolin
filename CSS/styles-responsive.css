@@ -1,0 +1,80 @@
+@media (max-width: 767px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header-content {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem 0.5rem;
+    }
+
+    .hero {
+        padding: 3.25rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .content-section {
+        padding: 3.25rem 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 4.75rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-section {
+        padding: 4rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        padding: 5.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .content-section {
+        padding: 4.75rem 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero h1 {
+        font-size: 3.25rem;
+    }
+
+    .content-section {
+        padding: 5.25rem 0;
+    }
+}

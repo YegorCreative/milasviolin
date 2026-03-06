@@ -1,21 +1,23 @@
-# Project Title
+# Mila's Violin Website
 
-Modern Responsive Website
+## Project Description
 
-# Project Description
+This project is a modern responsive website for Mila's Violin. The website presents a violin performer and instructor, sharing information about performances, lessons, biography, and contact information.
 
-This project is a modern responsive website built with HTML, CSS, and JavaScript. It focuses on clean structure, accessibility, performance, and a mobile-first design approach. The project is intended to be developed in Visual Studio Code using GitHub Copilot and deployed via GitHub Pages.
+The site replaces a Google Sites version and is rebuilt using a professional front-end structure to allow full control of design, performance, and responsiveness.
 
-# Technology Stack
+The project is developed in Visual Studio Code using GitHub Copilot and deployed using GitHub Pages.
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Visual Studio Code
-- GitHub Copilot
-- GitHub Pages
+## Technology Stack
 
-# Project Structure
+HTML5  
+CSS3  
+Vanilla JavaScript  
+Visual Studio Code  
+GitHub Copilot  
+GitHub Pages
+
+## Project Structure
 
 ```text
 /project-root
@@ -34,38 +36,37 @@ This project is a modern responsive website built with HTML, CSS, and JavaScript
 └── README.md
 ```
 
-# Development Rules
+## Development Rules
 
-- Mobile-first design
-- Semantic HTML elements (header, nav, main, section, footer)
-- Responsive layout using media queries
-- Lazy loading for images
-- Accessible markup using alt attributes and ARIA where needed
-- Organized CSS structure
-- Minimal and clean JavaScript
-- No unnecessary frameworks
+Mobile-first design  
+Semantic HTML structure (header, nav, main, section, footer)  
+Fully responsive layout using media queries  
+Images must include alt attributes and lazy loading  
+Clean and organized CSS structure  
+Minimal JavaScript focused on functionality  
+Fast loading and accessible design
 
-# Local Development
+## Local Development
 
 1. Clone the repository
 2. Open the project in Visual Studio Code
 3. Install the Live Server extension
-4. Right-click index.html and select "Open with Live Server"
+4. Right click index.html and choose "Open with Live Server"
 
-# Deployment
+## Deployment
 
-The website is deployed using GitHub Pages and can be published directly from the repository settings.
+The website will be deployed using GitHub Pages directly from the repository.
 
-# Version Control
+## Version Control
 
-Use Git for version control with the following recommended workflow:
+Recommended Git workflow:
 
 ```bash
 git add .
-git commit -m "Update project"
+git commit -m "Update website"
 git push origin main
 ```
 
-# License
+## License
 
 This project can use the MIT License unless otherwise specified.
