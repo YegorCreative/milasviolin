@@ -28,12 +28,32 @@
         padding: 0.85rem 0.5rem;
     }
 
-    .hero {
-        padding: 3.25rem 0;
+    .hero-overlay {
+        min-height: 80vh;
+        padding: 2rem 0;
     }
 
     .hero h1 {
-        font-size: 1.9rem;
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
     }
 
     .content-section {
@@ -42,12 +62,24 @@
 }
 
 @media (min-width: 768px) {
-    .hero {
-        padding: 4.75rem 0;
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-bio-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
     }
 
     .content-section {
@@ -56,12 +88,24 @@
 }
 
 @media (min-width: 1024px) {
-    .hero {
-        padding: 5.5rem 0;
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .review-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 3.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.35rem;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
     }
 
     .content-section {
@@ -71,7 +115,7 @@
 
 @media (min-width: 1200px) {
     .hero h1 {
-        font-size: 3.25rem;
+        font-size: 3.8rem;
     }
 
     .content-section {
