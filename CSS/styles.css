@@ -15,13 +15,33 @@ html {
 
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     background: #ffffff;
-    color: #111;
+    color: #1a1a1a;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.site-frame {
+    max-width: 1440px;
+    margin: 2px auto;
+    border: 2px solid blue;
+    border-radius: 25px;
+    overflow: hidden;
+    background: white;
 }
 
 img {
@@ -31,7 +51,7 @@ img {
 }
 
 main {
-    flex: 1;
+    min-height: 60vh;
 }
 
 .container {
@@ -70,40 +90,52 @@ main {
 }
 
 .main-nav {
-    width: auto;
-    margin-left: auto;
     display: flex;
-    justify-content: flex-end;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
+    gap: 34px;
     align-items: center;
     justify-content: flex-end;
-    gap: 1.5rem;
+    margin-left: auto;
 }
 
-.main-nav a {
-    display: inline-block;
-    padding: 0.5rem 0.25rem;
-    color: #1f2937;
-    font-weight: 500;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    transition: color 0.2s ease;
+    color: #333;
+    font-size: 12px;
 }
 
-.main-nav a:hover {
-    color: #4f46e5;
+.nav-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 3px;
+}
+
+.nav-icon i,
+.nav-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.nav-label {
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: #0071e3;
 }
 
 .hero {
-    background-image: url("../img/MilaViolin9.png");
+    background-image: url("../img/MilaViolin15.webp");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     min-height: 80vh;
     display: flex;
     align-items: center;
+    border-radius: 25px 25px 0 0;
 }
 
 .hero-overlay {
@@ -195,6 +227,38 @@ p {
     margin-bottom: 0.8rem;
 }
 
+.about-highlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.about-image img {
+    width: 100%;
+    max-height: 520px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.music-quote {
+    text-align: center;
+    margin: 100px auto;
+    max-width: 700px;
+}
+
+.music-quote blockquote {
+    font-size: 26px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.quote-author {
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
 .btn {
     display: inline-block;
     padding: 0.75rem 1.2rem;
@@ -228,6 +292,8 @@ footer {
     color: white;
     background-size: cover;
     background-position: right center;
+    background-repeat: no-repeat;
+    border-radius: 25px 25px 0 0;
 }
 
 .page-hero-overlay {
@@ -429,7 +495,8 @@ footer {
 
 .about-image img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 18px;
+    object-fit: cover;
 }
 
 .page-banner-image {

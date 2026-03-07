@@ -24,6 +24,33 @@ function initializeSmoothScrolling() {
     });
 }
 
+function initializeActiveNavigation() {
+    const navItems = document.querySelectorAll('.main-nav .nav-item');
+
+    if (!navItems.length) {
+        return;
+    }
+
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    navItems.forEach(function (item) {
+        const href = item.getAttribute('href');
+        const normalizedHref = href === '/' ? 'index.html' : href;
+
+        if (normalizedHref === currentPath) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function initializeLucideIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
+}
+
 function initializeContactForm() {
     const bookingForm = document.querySelector('#booking-form');
     const payloadField = document.querySelector('#google-form-payload');
@@ -90,6 +117,8 @@ async function loadSharedComponents() {
 
 document.addEventListener('DOMContentLoaded', async function () {
     await loadSharedComponents();
+    initializeLucideIcons();
+    initializeActiveNavigation();
     initializeSmoothScrolling();
     initializeContactForm();
 });
