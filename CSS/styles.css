@@ -105,8 +105,9 @@ height:auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding-left: clamp(16px, 4vw, 40px);
-    padding-right: clamp(16px, 4vw, 40px);
+    padding-left: clamp(20px, 5vw, 60px);
+    padding-right: clamp(20px, 5vw, 60px);
+    box-sizing: border-box;
 }
 
 .container {
@@ -866,22 +867,20 @@ padding-top:72px;
 .services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 30px;
+    width: 100%;
     max-width: 680px;
     margin: 60px auto;
-    width: 100%;
+    box-sizing: border-box;
 }
 
 .service-card {
     width: 100%;
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
     padding: 28px 26px;
-    border-radius: 20px;
+    border-radius: 22px;
     box-sizing: border-box;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
 }
 
 .service-card:hover {
