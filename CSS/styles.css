@@ -925,19 +925,12 @@ padding-top:72px;
 }
 
 .parallax-section {
-    position: relative;
-    height: 420px;
-    background-image: url('../img/MilaViolin13.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
-    margin: 120px auto;
-    max-width: 1400px;
+    width: 100%;
+    max-width: 100%;
+    margin: 60px auto;
+    border-radius: 24px;
     overflow: hidden;
+    position: relative;
 }
 
 .parallax-section::before {
@@ -956,15 +949,13 @@ padding-top:72px;
 }
 
 .parallax-overlay {
-    position: relative;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 80px 60px;
-    text-align: center;
-    color: #ffffff;
+    max-width: 640px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 28px 24px;
     border-radius: 20px;
-    backdrop-filter: blur(6px);
-    max-width: 700px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .parallax-overlay h2 {
@@ -982,6 +973,26 @@ padding-top:72px;
     max-width: 600px;
     margin: auto;
     color: #f8fafc;
+}
+
+@media (max-width:768px) {
+
+.parallax-overlay h2 {
+font-size: clamp(26px, 6vw, 34px);
+line-height: 1.25;
+}
+
+.parallax-overlay p {
+font-size: 16px;
+line-height: 1.6;
+}
+
+}
+
+.parallax-section img {
+max-width: 100%;
+height: auto;
+display: block;
 }
 
 .page-hero {
