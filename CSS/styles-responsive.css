@@ -83,6 +83,20 @@
         font-size: 22px;
     }
 
+    .services-section {
+        padding: 72px 20px;
+        margin: 72px 20px;
+        border-radius: 20px;
+    }
+
+    .services-overlay {
+        padding: 48px 24px;
+    }
+
+    .quote {
+        font-size: 22px;
+    }
+
     .parallax-section {
         height: 340px;
         margin: 72px 20px;

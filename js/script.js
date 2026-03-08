@@ -183,6 +183,30 @@ function initializeParallaxSections() {
     });
 }
 
+function initializeBackToTopButton() {
+    const scrollArea = document.querySelector('.scroll-area');
+    const backToTop = document.getElementById('backToTop');
+
+    if (!scrollArea || !backToTop) {
+        return;
+    }
+
+    scrollArea.addEventListener('scroll', () => {
+        if (scrollArea.scrollTop > 400) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        scrollArea.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 async function loadSharedComponents() {
     const headerMount = document.querySelector('#header');
     const footerMount = document.querySelector('#footer');
@@ -225,4 +249,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     initializeScrollAnimations();
     initializeFeaturedStoryAnimation();
     initializeParallaxSections();
+    initializeBackToTopButton();
 });
