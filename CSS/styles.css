@@ -808,11 +808,6 @@ main > section.page-hero.about-hero:first-child {
     overflow: hidden;
 }
 
-.hero{
-margin-top:-72px;
-padding-top:72px;
-}
-
 .hero-overlay {
     min-height: 80vh;
     width: 100%;
@@ -820,6 +815,13 @@ padding-top:72px;
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
+    border-top-left-radius: 24px !important;
+    border-top-right-radius: 24px !important;
+    overflow: hidden;
+}
+
+.hero-home,
+.hero-home .hero-overlay {
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
 }
