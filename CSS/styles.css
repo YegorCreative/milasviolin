@@ -438,6 +438,9 @@ main {
     margin-top: 0;
     padding-top: 0;
     padding-bottom: 0;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    overflow: hidden;
 }
 
 main > .about-hero:first-child {
@@ -460,6 +463,8 @@ main > section.page-hero.about-hero:first-child {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 }
 
 .about-hero-content {
@@ -1047,13 +1052,10 @@ display: block;
     justify-content: center;
     text-align: center;
     color: #ffffff;
-    border-radius: 0;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    overflow: hidden;
     position: relative;
-}
-
-.page-hero{
-margin-top:-72px;
-padding-top:72px;
 }
 
 .page-hero::before {
@@ -1065,6 +1067,8 @@ padding-top:72px;
         rgba(0, 0, 0, 0.45)
     );
     z-index: 1;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 }
 
 .page-hero-content {
@@ -1134,7 +1138,7 @@ padding-top:72px;
 
 .site-header,
 .header {
-border-bottom:1px solid #e5e7eb;
+border-bottom:none;
 background:#ffffff;
 position:relative;
 transition:transform .35s ease;
