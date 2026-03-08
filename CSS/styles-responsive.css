@@ -328,6 +328,78 @@
 
 }
 
+@media (max-width: 768px) {
+
+body {
+    overflow:auto;
+}
+
+.site-frame {
+    width:100%;
+    height:auto;
+    min-height:100dvh;
+    margin:0;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+}
+
+.scroll-area {
+    height:auto;
+    overflow:visible;
+}
+
+.hero,
+.page-hero {
+    min-height:70vh;
+    height:auto;
+}
+
+.hero-overlay {
+    min-height:70vh;
+}
+
+.hero h1,
+.page-hero h1 {
+    font-size:36px;
+}
+
+.hero p,
+.page-hero p {
+    font-size:17px;
+}
+
+.featured,
+.about-grid,
+.bio-grid,
+.about-artist-layout {
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.services-grid {
+    grid-template-columns:1fr;
+}
+
+.gallery-grid {
+    grid-template-columns:1fr;
+}
+
+.artist-bio-container {
+    grid-template-columns:1fr;
+}
+
+.container {
+    padding-left:22px;
+    padding-right:22px;
+}
+
+.parallax-section {
+    background-attachment:scroll;
+}
+
+}
+
 @media (max-width:768px){
 
 body{
@@ -391,6 +463,78 @@ font-size:17px;
 
 .parallax-section{
 background-attachment:scroll;
+}
+
+}
+
+@media (max-width: 768px) {
+
+body {
+    overflow:auto;
+}
+
+.site-frame {
+    width:100%;
+    height:auto;
+    min-height:100dvh;
+    margin:0;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+}
+
+.scroll-area {
+    height:auto;
+    overflow:visible;
+}
+
+.hero,
+.page-hero {
+    min-height:70vh;
+    height:auto;
+}
+
+.hero-overlay {
+    min-height:70vh;
+}
+
+.hero h1,
+.page-hero h1 {
+    font-size:36px;
+}
+
+.hero p,
+.page-hero p {
+    font-size:17px;
+}
+
+.featured,
+.about-grid,
+.bio-grid,
+.about-artist-layout {
+    grid-template-columns:1fr;
+    gap:40px;
+}
+
+.services-grid {
+    grid-template-columns:1fr;
+}
+
+.gallery-grid {
+    grid-template-columns:1fr;
+}
+
+.artist-bio-container {
+    grid-template-columns:1fr;
+}
+
+.container {
+    padding-left:22px;
+    padding-right:22px;
+}
+
+.parallax-section {
+    background-attachment:scroll;
 }
 
 }
