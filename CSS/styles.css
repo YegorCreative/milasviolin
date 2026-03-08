@@ -94,6 +94,7 @@ height:auto;
     background: #ffffff;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     transition: box-shadow 0.4s ease;
 }
 
@@ -105,6 +106,9 @@ height:auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
 }
 
 .scroll-area::-webkit-scrollbar {
@@ -799,6 +803,9 @@ main > section.page-hero.about-hero:first-child {
     background-position: center;
     background-repeat: no-repeat;
     color: #ffffff;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    overflow: hidden;
 }
 
 .hero{
@@ -813,6 +820,8 @@ padding-top:72px;
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35));
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 }
 
 .hero-content {
@@ -847,18 +856,18 @@ padding-top:72px;
     background-image: url('../img/MilaViolin14.webp');
     background-size: cover;
     background-position: center;
-    padding: 140px 40px;
+    padding: 80px 40px;
     padding-left: clamp(18px, 5vw, 60px);
     padding-right: clamp(18px, 5vw, 60px);
     border-radius: 25px;
-    margin: 120px auto;
+    margin: 24px auto;
     max-width: 1400px;
 }
 
 .services-overlay {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    padding: 100px 60px;
+    padding: 60px 40px;
     border-radius: 20px;
 }
 
@@ -867,22 +876,35 @@ padding-top:72px;
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 30px;
     width: 100%;
-    max-width: 680px;
+    max-width: 1100px;
     margin: 60px auto;
     box-sizing: border-box;
 }
 
 .service-card {
-    width: 100%;
-    max-width: 620px;
-    margin: 0 auto;
+    flex: 1 1 310px;
+    max-width: 310px;
+    margin: 0;
     padding: 28px 26px;
     border-radius: 22px;
     box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card h3,
+.service-card p {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .service-card:hover {
@@ -928,10 +950,20 @@ padding-top:72px;
 .parallax-section {
     width: 100%;
     max-width: 100%;
-    margin: 60px auto;
+    margin: 10px auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
+    background-image: url('../img/MilaViolin13.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .parallax-section::before {
@@ -957,6 +989,10 @@ padding-top:72px;
     border-radius: 20px;
     text-align: center;
     box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(4px);
 }
 
 .parallax-overlay h2 {
@@ -965,6 +1001,7 @@ padding-top:72px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: #ffffff;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
 }
 
 .parallax-overlay p {
@@ -974,6 +1011,7 @@ padding-top:72px;
     max-width: 600px;
     margin: auto;
     color: #f8fafc;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width:768px) {
@@ -1096,10 +1134,10 @@ padding-top:72px;
 .header {
 border-bottom:1px solid #e5e7eb;
 background:#ffffff;
-position:sticky;
-top:0;
-z-index:100;
+position:relative;
 transition:transform .35s ease;
+border-top-left-radius:inherit;
+border-top-right-radius:inherit;
 }
 
 .header-content {

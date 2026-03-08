@@ -147,39 +147,41 @@ function initializeBackToTopButton() {
     });
 }
 
-function initializeAutoHideNavbar() {
-    const header = document.querySelector('.site-header');
-    const scrollArea = document.querySelector('.scroll-area');
+function initializeAutoHideNavbar(){
 
-    if (!header) return;
+const header=document.querySelector('.site-header');
+const scrollArea=document.querySelector('.scroll-area');
 
-    let lastScroll = 0;
-    const revealPoint = 120;
+if(!header)return;
 
-    const getScroll = () => {
-        return scrollArea ? scrollArea.scrollTop : window.scrollY;
-    };
+let lastScroll=0;
+const revealPoint=120;
 
-    const handleScroll = () => {
+function getScroll(){
+return scrollArea?scrollArea.scrollTop:window.scrollY;
+}
 
-        const currentScroll = getScroll();
+function handleScroll(){
 
-        if (currentScroll > lastScroll) {
-            header.classList.add('navbar-hidden');
-        }
+const current=getScroll();
 
-        if (currentScroll < revealPoint) {
-            header.classList.remove('navbar-hidden');
-        }
+if(current>lastScroll){
+header.classList.add('navbar-hidden');
+}
 
-        lastScroll = currentScroll;
-    };
+if(current<revealPoint){
+header.classList.remove('navbar-hidden');
+}
 
-    if (scrollArea) {
-        scrollArea.addEventListener('scroll', handleScroll);
-    } else {
-        window.addEventListener('scroll', handleScroll);
-    }
+lastScroll=current;
+}
+
+if(scrollArea){
+scrollArea.addEventListener('scroll',handleScroll);
+}else{
+window.addEventListener('scroll',handleScroll);
+}
+
 }
 
 async function loadSharedComponents() {
