@@ -307,26 +307,43 @@ main {
 
 .artist-bio-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 420px 1fr;
+    grid-template-rows: auto auto;
+    gap: 50px;
     max-width: 1200px;
     margin: auto;
     padding: 0 40px;
+    align-items: start;
+}
+
+.artist-bio-photo {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.artist-bio-intro {
+    grid-column: 2;
+    margin-top: 40px;
+}
+
+.artist-bio-rest {
+    grid-column: 1 / span 2;
+    margin-top: 10px;
 }
 
 .artist-bio-photo img {
     width: 100%;
-    border-radius: 18px;
+    border-radius: 16px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.artist-bio-text h2 {
+.artist-bio-intro h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.artist-bio-text p {
+.artist-bio-intro p,
+.artist-bio-rest p {
     line-height: 1.8;
     font-size: 17px;
     color: #444;

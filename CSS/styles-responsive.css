@@ -154,6 +154,10 @@
         padding: 0 20px;
     }
 
+    .artist-bio-rest {
+        grid-column: auto;
+    }
+
     p {
         text-wrap: pretty;
     }
