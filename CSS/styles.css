@@ -35,7 +35,8 @@ h3 {
 }
 
 section {
-    padding: 90px 0;
+    padding-top: clamp(50px, 8vw, 90px);
+    padding-bottom: clamp(50px, 8vw, 90px);
 }
 
 h2 {
@@ -48,6 +49,14 @@ p {
     margin-bottom: 0.8rem;
     line-height: 1.75;
     color: #444;
+}
+
+p,
+h1,
+h2,
+h3 {
+    max-width: 100%;
+    min-width: 295px;
 }
 
 blockquote {
@@ -96,7 +105,8 @@ height:auto;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding-left: clamp(18px, 4vw, 60px);
+    padding-right: clamp(18px, 4vw, 60px);
 }
 
 main {
@@ -120,7 +130,7 @@ main {
 .about-grid,
 .featured {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     gap: 80px;
     align-items: center;
 }
@@ -151,7 +161,7 @@ main {
 .about-grid,
 .bio-grid {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     gap: 80px;
     align-items: center;
 }
@@ -232,7 +242,7 @@ main {
 
 .about-artist-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     gap: 60px;
     align-items: center;
     margin-top: 60px;
@@ -300,7 +310,7 @@ main {
 
 .artist-bio-container {
     display: grid;
-    grid-template-columns: 420px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     grid-template-rows: auto auto;
     gap: 50px;
     max-width: 1200px;
@@ -685,7 +695,7 @@ main > section.page-hero.about-hero:first-child {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
@@ -845,7 +855,7 @@ padding-top:72px;
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     margin-top: 60px;
     margin-bottom: 60px;
