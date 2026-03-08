@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mila's Violin</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/styles-responsive.css">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles-responsive.css">
 </head>
 <body>
   <div class="site-frame">
-    <div id="header"></div>
+    <header id="header" class="site-header"></header>
 
     <main>
-      <section id="home" class="hero page-section" aria-labelledby="hero-title">
+      <section id="home" class="hero hero-home page-section" aria-labelledby="hero-title">
         <div class="hero-overlay">
-          <div class="container hero-content">
+          <div class="hero-content container">
             <h1 id="hero-title">Design in Sound</h1>
 
             <p class="hero-subtitle">
@@ -34,54 +34,64 @@
         </div>
       </section>
 
-      <section class="content-section page-section" aria-labelledby="welcome-title">
+      <section class="content-section introduction" aria-labelledby="welcome-title">
         <div class="container">
-          <h2 id="welcome-title">Unforgettable Moments with Mila’s Violin</h2>
-          <p>Welcome to Mila’s Violin, where music speaks directly to the soul. Mila’s exceptional talent and captivating performances bring a unique touch to every occasion—whether it’s a wedding, anniversary, corporate event, or private gathering. Her violin melodies blend sophistication and emotion, creating an atmosphere of elegance and joy. Explore Mila’s journey, hear her music, and discover how her performances can make your event truly extraordinary.</p>
+          <h2 id="welcome-title">An Artist Who Performs With Intention</h2>
+          <p>Mila’s violin performances are crafted with sensitivity, elegance, and emotional depth. From refined ceremonies to intimate private moments, every piece is chosen to shape atmosphere and leave a lasting impression.</p>
         </div>
       </section>
 
-      <section class="about-highlight container">
-        <div class="about-image">
+      <section class="featured-story container" aria-labelledby="featured-story-title">
+        <div class="story-image">
           <img src="img/MilaViolin9.png" alt="Mila performing violin at an event" loading="lazy">
         </div>
 
-        <div class="about-text">
-          <h2>A Life Dedicated to Music</h2>
+        <div class="story-text">
+          <h2 id="featured-story-title">The Voice of the Violin</h2>
           <p>
-            For Mila, the violin is more than an instrument—it is a voice that carries emotion and storytelling through every note. Her performances bring elegance and warmth to weddings, celebrations, and special events.
-          </p>
-
-          <p>
-            With a repertoire that spans classical masterpieces, contemporary music, and custom arrangements, Mila creates an atmosphere that transforms every occasion into something unforgettable.
+            For Mila, the violin is more than an instrument - it is a voice that expresses emotion, elegance, and beauty. Every performance is designed to create unforgettable moments.
           </p>
         </div>
       </section>
 
-      <section class="content-section page-section" aria-labelledby="mission-title">
+      <section class="content-section services" aria-labelledby="services-title">
         <div class="container">
-          <h2 id="mission-title">Mission Statement</h2>
-          <p><strong>TO CREATE A CAPTIVATING VIOLIN EXPERIENCE THAT TAKES LISTENERS ON AN IMMERSIVE JOURNEY BEYOND THEIR EXPECTATIONS, ENCHANTING EVERY MOMENT</strong></p>
+          <h2 id="services-title">Services</h2>
+          <div class="services-grid" aria-label="Performance services">
+            <article class="service-card">
+              <h3>Wedding Performances</h3>
+              <p>Refined live violin for ceremonies, receptions, and unforgettable entrances.</p>
+            </article>
+            <article class="service-card">
+              <h3>Private Events</h3>
+              <p>Elegant music curation for celebrations, dinners, and exclusive gatherings.</p>
+            </article>
+            <article class="service-card">
+              <h3>Violin Lessons</h3>
+              <p>Personalized instruction that builds confidence, artistry, and technique.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="music-quote container">
+      <section class="testimonials container" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">Testimonials</h2>
         <blockquote>
-          "Music has the power to transform a moment into a memory."
+          "Mila's violin performance transformed our wedding ceremony into something magical."
         </blockquote>
-
-        <p class="quote-author">— Mila</p>
+        <p class="quote-author">- Wedding Client</p>
       </section>
 
+      <section class="cta container" aria-labelledby="cta-title">
+        <h2 id="cta-title">Bring the Beauty of Live Violin to Your Event</h2>
+        <a href="contact.html" class="btn-primary">Book an Event</a>
+      </section>
     </main>
 
-    <div id="footer"></div>
+    <footer id="footer" class="site-footer"></footer>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>

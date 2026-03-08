@@ -1,3 +1,32 @@
+const fallbackHeaderMarkup = `
+<div class="container header-content">
+    <div class="logo">
+        <a href="index.html" aria-label="Go to home page">
+            <img src="img/Mila Violin-1.png" alt="Mila's Violin Logo" loading="lazy">
+        </a>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" class="nav-item"><span class="nav-label">Home</span></a>
+        <a href="about.html" class="nav-item"><span class="nav-label">About</span></a>
+        <a href="pricing.html" class="nav-item"><span class="nav-label">Pricing</span></a>
+        <a href="stories.html" class="nav-item"><span class="nav-label">Stories</span></a>
+        <a href="contact.html" class="nav-item"><span class="nav-label">Contact</span></a>
+    </nav>
+</div>
+`;
+
+const fallbackFooterMarkup = `
+<div class="container">
+    <p>COPYRIGHT &copy;2024, Mila Violin. ALL RIGHTS RESERVED.</p>
+    <p>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> |
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> |
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+    </p>
+</div>
+`;
+
 function initializeSmoothScrolling() {
     const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
 
@@ -31,11 +60,12 @@ function initializeActiveNavigation() {
         return;
     }
 
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const rawPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = rawPath === '' || rawPath === '/' ? 'index.html' : rawPath;
 
     navItems.forEach(function (item) {
-        const href = item.getAttribute('href');
-        const normalizedHref = href === '/' ? 'index.html' : href;
+        const href = item.getAttribute('href') || '';
+        const normalizedHref = href.replace(/^\//, '') || 'index.html';
 
         if (normalizedHref === currentPath) {
             item.classList.add('active');
@@ -86,33 +116,33 @@ async function loadSharedComponents() {
     const headerMount = document.querySelector('#header');
     const footerMount = document.querySelector('#footer');
 
-    const requests = [];
-
     if (headerMount) {
-        requests.push(
-            fetch('components/header.html')
-                .then(function (response) {
-                    return response.text();
-                })
-                .then(function (html) {
-                    headerMount.innerHTML = html;
-                })
-        );
+        try {
+            const response = await fetch('components/header.html');
+
+            if (!response.ok) {
+                throw new Error('Header request failed');
+            }
+
+            headerMount.innerHTML = await response.text();
+        } catch (_error) {
+            headerMount.innerHTML = fallbackHeaderMarkup;
+        }
     }
 
     if (footerMount) {
-        requests.push(
-            fetch('components/footer.html')
-                .then(function (response) {
-                    return response.text();
-                })
-                .then(function (html) {
-                    footerMount.innerHTML = html;
-                })
-        );
-    }
+        try {
+            const response = await fetch('components/footer.html');
 
-    await Promise.all(requests);
+            if (!response.ok) {
+                throw new Error('Footer request failed');
+            }
+
+            footerMount.innerHTML = await response.text();
+        } catch (_error) {
+            footerMount.innerHTML = fallbackFooterMarkup;
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', async function () {

@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Mila's Violin</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/styles-responsive.css">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/styles-responsive.css">
 </head>
 <body>
   <div class="site-frame">
-    <div id="header"></div>
+    <header id="header" class="site-header"></header>
 
     <main>
-      <section class="page-hero" style="background-image:url('img/MilaViolin11.webp')" aria-labelledby="about-page-hero-title">
-        <div class="page-hero-overlay">
-          <div class="container page-hero-content">
+      <section class="hero hero-about" aria-labelledby="about-page-hero-title">
+        <div class="hero-overlay">
+          <div class="hero-content container">
             <h1 id="about-page-hero-title">Meet Mila</h1>
-            <p class="page-hero-subtitle">A life dedicated to music, performance, and inspiring the next generation of violinists.</p>
+            <p class="hero-subtitle">A life dedicated to music, performance, and inspiring the next generation of violinists.</p>
           </div>
         </div>
       </section>
@@ -48,13 +48,10 @@
       </section>
     </main>
 
-    <div id="footer"></div>
+    <footer id="footer" class="site-footer"></footer>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>

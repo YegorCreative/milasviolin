@@ -1,27 +1,7 @@
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .container {
         padding-left: 16px;
         padding-right: 16px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .page-hero {
-        height: 240px;
-    }
-
-    .page-hero h1 {
-        font-size: 32px;
-    }
-
-    .page-hero-subtitle {
-        font-size: 16px;
     }
 
     .header-content {
@@ -39,18 +19,21 @@
         gap: 20px;
     }
 
-    .nav-icon {
-        width: 18px;
-        height: 18px;
+    .hero,
+    .hero-overlay {
+        min-height: 80vh;
     }
 
     .hero-overlay {
-        min-height: 80vh;
         padding: 2rem 0;
     }
 
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .hero-subtitle {
@@ -75,62 +58,25 @@
     .content-section {
         padding: 3.25rem 0;
     }
-}
 
-@media (max-width: 768px) {
-    .about-highlight {
-        grid-template-columns: 1fr;
-    }
-
-    .main-nav {
-        gap: 20px;
-    }
-
-    .nav-icon {
-        width: 18px;
-        height: 18px;
-    }
-
-    .about-grid {
+    .about-highlight,
+    .about-grid,
+    .gallery-grid,
+    .review-grid,
+    .info-grid,
+    .pricing-grid,
+    .stories-grid {
         grid-template-columns: 1fr;
     }
 
     .about-intro {
         max-width: 100%;
     }
-
-    .page-hero {
-        height: 240px;
-    }
-
-    .page-hero h1 {
-        font-size: 32px;
-    }
-
-    .page-hero-subtitle {
-        font-size: 16px;
-    }
 }
 
-@media (min-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+@media (min-width: 769px) {
     .review-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .content-section {
-        padding: 4rem 0;
     }
 }
 
@@ -143,29 +89,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .hero h1 {
-        font-size: 3.4rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.35rem;
-    }
-
-    .hero-description {
-        font-size: 1.05rem;
-    }
-
     .content-section {
-        padding: 4.75rem 0;
-    }
-}
-
-@media (min-width: 1200px) {
-    .hero h1 {
-        font-size: 3.8rem;
-    }
-
-    .content-section {
-        padding: 5.25rem 0;
+        padding: 4.5rem 0;
     }
 }
