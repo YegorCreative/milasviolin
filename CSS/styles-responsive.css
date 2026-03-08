@@ -1,7 +1,15 @@
 @media (max-width: 768px) {
+    .site-frame,
+    .site-wrapper {
+        border-radius: 18px;
+    }
+
+    section {
+        padding: 72px 0;
+    }
+
     .container {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding: 0 20px;
     }
 
     .header-content {
@@ -55,13 +63,9 @@
         max-width: 280px;
     }
 
-    .content-section {
-        padding: 3.25rem 0;
-    }
-
     .about-highlight,
     .about-grid,
-    .featured-story,
+    .featured,
     .services-grid,
     .gallery-grid,
     .review-grid,
@@ -75,16 +79,30 @@
         max-width: 100%;
     }
 
-    .featured-story .story-text {
-        padding: 1.25rem;
+    .testimonials blockquote {
+        font-size: 22px;
     }
 
-    .testimonials blockquote {
-        font-size: 1.5rem;
+    .parallax-section {
+        height: 340px;
+        margin: 72px 20px;
+        background-attachment: scroll;
+    }
+
+    .parallax-overlay {
+        padding: 36px 24px;
+    }
+
+    .parallax-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .parallax-overlay p {
+        font-size: 1rem;
     }
 
     .cta {
-        text-align: left;
+        text-align: center;
     }
 }
 
@@ -103,7 +121,4 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .content-section {
-        padding: 4.5rem 0;
-    }
 }

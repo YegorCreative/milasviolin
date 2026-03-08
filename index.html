@@ -10,10 +10,11 @@
 </head>
 <body>
   <div class="site-frame">
-    <header id="header" class="site-header"></header>
+    <header id="header" class="site-header header"></header>
 
+    <div class="scroll-area">
     <main>
-      <section id="home" class="hero hero-home page-section" aria-labelledby="hero-title">
+      <section id="home" class="hero hero-home page-section fade-in" aria-labelledby="hero-title">
         <div class="hero-overlay">
           <div class="hero-content container">
             <h1 id="hero-title">Design in Sound</h1>
@@ -34,64 +35,86 @@
         </div>
       </section>
 
-      <section class="content-section introduction" aria-labelledby="welcome-title">
+      <section class="content-section introduction fade-in" aria-labelledby="welcome-title">
         <div class="container">
           <h2 id="welcome-title">An Artist Who Performs With Intention</h2>
           <p>Mila’s violin performances are crafted with sensitivity, elegance, and emotional depth. From refined ceremonies to intimate private moments, every piece is chosen to shape atmosphere and leave a lasting impression.</p>
         </div>
       </section>
 
-      <section class="featured-story container" aria-labelledby="featured-story-title">
-        <div class="story-image">
+      <section class="featured container" aria-labelledby="featured-title">
+        <div class="featured-image">
           <img src="img/MilaViolin9.png" alt="Mila performing violin at an event" loading="lazy">
         </div>
 
-        <div class="story-text">
-          <h2 id="featured-story-title">The Voice of the Violin</h2>
+        <div class="featured-text">
+          <h2 id="featured-title">The Voice of the Violin</h2>
           <p>
-            For Mila, the violin is more than an instrument - it is a voice that expresses emotion, elegance, and beauty. Every performance is designed to create unforgettable moments.
+            For Mila, the violin is more than an instrument - it is a voice that carries emotion, elegance, and storytelling through every note. From intimate ceremonies to grand celebrations, her performances transform ordinary moments into lasting memories.
+          </p>
+          <p>
+            With a repertoire that spans classical masterpieces, contemporary arrangements, and timeless melodies, Mila carefully crafts each performance to match the atmosphere of the occasion.
+          </p>
+          <p>
+            Every bow stroke is intentional, every phrase shaped to create a beautiful emotional connection with the audience.
+          </p>
+        </div>
+
+        <div class="floating-notes" aria-hidden="true">
+          <span>♪</span>
+          <span>♫</span>
+          <span>♩</span>
+        </div>
+      </section>
+
+      <section class="parallax-section" aria-labelledby="parallax-title">
+        <div class="parallax-overlay">
+          <h2 id="parallax-title">Music That Transforms Moments</h2>
+          <p>
+            Every performance is crafted to elevate the atmosphere and create unforgettable memories.
           </p>
         </div>
       </section>
 
-      <section class="content-section services" aria-labelledby="services-title">
-        <div class="container">
-          <h2 id="services-title">Services</h2>
+      <section class="services container fade-in" aria-labelledby="services-title">
+          <h2 id="services-title">Performances &amp; Services</h2>
           <div class="services-grid" aria-label="Performance services">
             <article class="service-card">
               <h3>Wedding Performances</h3>
-              <p>Refined live violin for ceremonies, receptions, and unforgettable entrances.</p>
+              <p>Elegant violin music for ceremonies and receptions.</p>
             </article>
             <article class="service-card">
               <h3>Private Events</h3>
-              <p>Elegant music curation for celebrations, dinners, and exclusive gatherings.</p>
+              <p>Beautiful live music for celebrations and gatherings.</p>
             </article>
             <article class="service-card">
               <h3>Violin Lessons</h3>
-              <p>Personalized instruction that builds confidence, artistry, and technique.</p>
+              <p>Personalized violin instruction for all ages.</p>
             </article>
           </div>
-        </div>
       </section>
 
-      <section class="testimonials container" aria-labelledby="testimonials-title">
-        <h2 id="testimonials-title">Testimonials</h2>
+      <section class="testimonials container fade-in" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">What Clients Say</h2>
         <blockquote>
-          "Mila's violin performance transformed our wedding ceremony into something magical."
+          "Mila's violin performance made our wedding ceremony unforgettable."
         </blockquote>
-        <p class="quote-author">- Wedding Client</p>
       </section>
 
-      <section class="cta container" aria-labelledby="cta-title">
-        <h2 id="cta-title">Bring the Beauty of Live Violin to Your Event</h2>
-        <a href="contact.html" class="btn-primary">Book an Event</a>
+      <section class="cta fade-in" aria-labelledby="cta-title">
+        <div class="container">
+          <h2 id="cta-title">Bring the Beauty of Live Violin to Your Event</h2>
+          <a href="contact.html" class="btn-primary">Book an Event</a>
+        </div>
       </section>
     </main>
 
     <footer id="footer" class="site-footer"></footer>
+    </div>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js"></script>
+  <button id="backToTop" aria-label="Back to top">↑</button>
 </body>
 </html>

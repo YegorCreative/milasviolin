@@ -112,6 +112,77 @@ function initializeContactForm() {
     });
 }
 
+function initializeScrollAnimations() {
+    const elements = document.querySelectorAll('.fade-in');
+
+    if (!elements.length || typeof window.IntersectionObserver !== 'function') {
+        elements.forEach(function (el) {
+            el.classList.add('visible');
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    elements.forEach(el => observer.observe(el));
+}
+
+function initializeFeaturedStoryAnimation() {
+    const featured = document.querySelector('.featured');
+
+    if (!featured) {
+        return;
+    }
+
+    if (typeof window.IntersectionObserver !== 'function') {
+        featured.classList.add('visible');
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    observer.observe(featured);
+}
+
+function initializeParallaxSections() {
+    const parallaxSections = document.querySelectorAll('.parallax-section');
+
+    if (!parallaxSections.length) {
+        return;
+    }
+
+    if (typeof window.IntersectionObserver !== 'function') {
+        parallaxSections.forEach(function (section) {
+            section.classList.add('visible');
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    parallaxSections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
 async function loadSharedComponents() {
     const headerMount = document.querySelector('#header');
     const footerMount = document.querySelector('#footer');
@@ -151,4 +222,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     initializeActiveNavigation();
     initializeSmoothScrolling();
     initializeContactForm();
+    initializeScrollAnimations();
+    initializeFeaturedStoryAnimation();
+    initializeParallaxSections();
 });
