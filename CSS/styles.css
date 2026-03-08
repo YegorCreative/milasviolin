@@ -16,6 +16,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     background: #f4f2ee;
@@ -837,6 +838,8 @@ padding-top:72px;
     background-size: cover;
     background-position: center;
     padding: 140px 40px;
+    padding-left: clamp(18px, 5vw, 60px);
+    padding-right: clamp(18px, 5vw, 60px);
     border-radius: 25px;
     margin: 120px auto;
     max-width: 1400px;
@@ -855,20 +858,19 @@ padding-top:72px;
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-    gap: 32px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 700px;
+    margin: 60px auto;
 }
 
 .service-card {
     width: 100%;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 26px;
+    border-radius: 18px;
     background: #ffffff;
-    padding: 40px;
-    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
