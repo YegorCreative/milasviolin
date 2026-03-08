@@ -1075,7 +1075,7 @@ padding-top:72px;
 }
 
 .header-content {
-    min-height: 72px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1088,9 +1088,15 @@ padding-top:72px;
     display: block;
 }
 
-.navbar-hidden {
-    transform: translateY(-120%);
+.site-header.navbar-hidden,
+.header.navbar-hidden {
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
+
 .main-nav {
     display: flex;
     gap: 34px;

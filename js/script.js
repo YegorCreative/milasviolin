@@ -148,41 +148,38 @@ function initializeBackToTopButton() {
 }
 
 function initializeAutoHideNavbar() {
-    const navbar = document.querySelector('.navbar') || document.querySelector('.site-header') || document.querySelector('.header') || document.querySelector('.main-nav');
+    const header = document.querySelector('.site-header');
     const scrollArea = document.querySelector('.scroll-area');
 
-    if (!navbar) {
-        return;
-    }
+    if (!header) return;
 
     let lastScroll = 0;
+    const revealPoint = 120;
 
-    const handleScroll = (currentScroll) => {
-        if (currentScroll <= 0) {
-            navbar.classList.remove('navbar-hidden');
-            lastScroll = 0;
-            return;
-        }
+    const getScroll = () => {
+        return scrollArea ? scrollArea.scrollTop : window.scrollY;
+    };
+
+    const handleScroll = () => {
+
+        const currentScroll = getScroll();
 
         if (currentScroll > lastScroll) {
-            navbar.classList.add('navbar-hidden');
-        } else {
-            navbar.classList.remove('navbar-hidden');
+            header.classList.add('navbar-hidden');
+        }
+
+        if (currentScroll < revealPoint) {
+            header.classList.remove('navbar-hidden');
         }
 
         lastScroll = currentScroll;
     };
 
     if (scrollArea) {
-        scrollArea.addEventListener('scroll', () => {
-            handleScroll(scrollArea.scrollTop);
-        });
-        return;
+        scrollArea.addEventListener('scroll', handleScroll);
+    } else {
+        window.addEventListener('scroll', handleScroll);
     }
-
-    window.addEventListener('scroll', () => {
-        handleScroll(window.pageYOffset || window.scrollY || 0);
-    });
 }
 
 async function loadSharedComponents() {
