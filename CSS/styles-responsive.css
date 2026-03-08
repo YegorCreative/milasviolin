@@ -90,6 +90,26 @@
         font-size: 36px;
     }
 
+    .artist-bio-text,
+    .meet-mila-text {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .artist-bio-text p,
+    .meet-mila-text p {
+        font-size: 17px;
+        line-height: 1.8;
+        max-width: 100%;
+    }
+
+    .artist-bio-text h2 {
+        font-size: 32px;
+        line-height: 1.25;
+        padding-right: 20px;
+    }
+
     .artist-bio-photo {
         order: 1;
     }
@@ -109,6 +129,15 @@
     .gallery-image img {
         max-width: 100%;
         height: auto;
+    }
+
+    .artist-bio-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    p {
+        text-wrap: pretty;
     }
 
     .testimonials blockquote {
