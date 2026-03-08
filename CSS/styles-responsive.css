@@ -176,6 +176,26 @@
         padding: 0 20px;
     }
 
+    .artist-bio-container {
+        display: block;
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .artist-bio-intro,
+    .artist-bio-rest {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .artist-bio-intro p,
+    .artist-bio-rest p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
     .artist-bio-rest {
         grid-column: auto;
     }
