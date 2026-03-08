@@ -268,6 +268,80 @@
     }
 }
 
+.container {
+max-width:1100px;
+margin:auto;
+padding-left:clamp(16px,4vw,60px);
+padding-right:clamp(16px,4vw,60px);
+}
+
+@media (max-width:700px){
+
+.container{
+padding-left:18px;
+padding-right:18px;
+}
+
+section{
+padding-top:60px;
+padding-bottom:60px;
+}
+
+}
+
+@media (max-width:640px){
+
+.featured,
+.about-grid,
+.bio-grid,
+.about-artist-layout,
+.artist-bio-container{
+grid-template-columns:1fr;
+gap:32px;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+p,
+h1,
+h2,
+h3{
+min-width:295px;
+max-width:100%;
+}
+
+@media (max-width:768px){
+
+.site-header,
+.header{
+margin-bottom:0;
+padding-bottom:0;
+}
+
+.hero,
+.page-hero{
+margin-top:0 !important;
+padding-top:0 !important;
+}
+
+.hero-overlay{
+margin-top:0;
+}
+
+.scroll-area{
+padding-top:0;
+}
+
+}
+
 @media (max-width:768px){
 
 .site-header,
