@@ -84,7 +84,7 @@ height:auto;
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    transition: all 0.4s ease;
+    transition: box-shadow 0.4s ease;
 }
 
 .scroll-area {
