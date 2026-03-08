@@ -149,7 +149,7 @@ main {
 .about-bio {
     padding: 120px 80px;
     max-width: 1200px;
-    margin: 120px auto;
+    margin: auto;
     background: #faf8f5;
     border-radius: 20px;
 }
@@ -195,6 +195,39 @@ main {
     margin-bottom: 18px;
     max-width: 560px;
     color: #333;
+}
+
+.about-artist-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.about-artist-photo img,
+.about-main-photo {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-gallery {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.about-gallery img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease;
+}
+
+.about-gallery img:hover {
+    transform: scale(1.03);
 }
 
 @media (max-width: 768px) {
@@ -713,24 +746,36 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.28);
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.45)
+    );
+    z-index: 1;
 }
 
 .page-hero-content {
     position: relative;
     z-index: 2;
+    text-align: center;
+    color: white;
     max-width: 720px;
     padding: 20px;
 }
 
 .page-hero h1 {
     font-size: 48px;
+    font-weight: 600;
+    color: white;
     margin-bottom: 10px;
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.8),
+        0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .page-hero p {
     font-size: 18px;
-    opacity: 0.95;
+    color: white;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
 }
 
 .hero-description {
