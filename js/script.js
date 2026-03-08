@@ -17,13 +17,23 @@ const fallbackHeaderMarkup = `
 `;
 
 const fallbackFooterMarkup = `
-<div class="container">
-    <p>COPYRIGHT &copy;2024, Mila Violin. ALL RIGHTS RESERVED.</p>
-    <p>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> |
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> |
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
-    </p>
+<p>
+    &copy; 2026 Mila Violin. All Rights Reserved.
+</p>
+
+<p class="footer-credit">
+    Website designed by
+    <a href="https://www.yegorcreative.com" target="_blank" rel="noopener noreferrer">
+        YegorCreative
+    </a>
+</p>
+
+<div class="social-links">
+    <a href="#">Facebook</a>
+    <span>|</span>
+    <a href="#">Instagram</a>
+    <span>|</span>
+    <a href="#">X</a>
 </div>
 `;
 
@@ -112,76 +122,6 @@ function initializeContactForm() {
     });
 }
 
-function initializeScrollAnimations() {
-    const elements = document.querySelectorAll('.fade-in');
-
-    if (!elements.length || typeof window.IntersectionObserver !== 'function') {
-        elements.forEach(function (el) {
-            el.classList.add('visible');
-        });
-        return;
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
-
-    elements.forEach(el => observer.observe(el));
-}
-
-function initializeFeaturedStoryAnimation() {
-    const featured = document.querySelector('.featured');
-
-    if (!featured) {
-        return;
-    }
-
-    if (typeof window.IntersectionObserver !== 'function') {
-        featured.classList.add('visible');
-        return;
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
-
-    observer.observe(featured);
-}
-
-function initializeParallaxSections() {
-    const parallaxSections = document.querySelectorAll('.parallax-section');
-
-    if (!parallaxSections.length) {
-        return;
-    }
-
-    if (typeof window.IntersectionObserver !== 'function') {
-        parallaxSections.forEach(function (section) {
-            section.classList.add('visible');
-        });
-        return;
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
-
-    parallaxSections.forEach(section => {
-        observer.observe(section);
-    });
-}
 
 function initializeBackToTopButton() {
     const scrollArea = document.querySelector('.scroll-area');
@@ -246,8 +186,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     initializeActiveNavigation();
     initializeSmoothScrolling();
     initializeContactForm();
-    initializeScrollAnimations();
-    initializeFeaturedStoryAnimation();
-    initializeParallaxSections();
     initializeBackToTopButton();
 });

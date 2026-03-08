@@ -102,7 +102,7 @@ img {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 60px;
 }
 
 main {
@@ -133,14 +133,6 @@ main {
 
 .featured {
     position: relative;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.featured.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .about-highlight {
@@ -151,6 +143,75 @@ main {
     max-width: 800px;
     margin: auto;
     text-align: left;
+}
+
+.about-section,
+.about-bio {
+    padding: 120px 80px;
+    max-width: 1200px;
+    margin: 120px auto;
+    background: #faf8f5;
+    border-radius: 20px;
+}
+
+.about-grid,
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-grid img,
+.bio-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12),
+        0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.about-grid h2,
+.bio-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    letter-spacing: 0.4px;
+}
+
+.about-grid h2::before,
+.bio-text h2::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #d8cbb7;
+    margin-bottom: 18px;
+}
+
+.about-grid p,
+.bio-text p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    max-width: 560px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .about-section,
+    .about-bio {
+        padding: 72px 24px;
+        margin: 72px 20px;
+    }
+
+    .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .bio-text h2 {
+        font-size: 34px;
+    }
 }
 
 .about-image img {
@@ -587,9 +648,6 @@ main {
     margin: 120px auto;
     max-width: 1400px;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
 }
 
 .parallax-section::before {
@@ -605,11 +663,6 @@ main {
         rgba(0, 0, 0, 0.55)
     );
     z-index: 0;
-}
-
-.parallax-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .parallax-overlay {
@@ -641,15 +694,43 @@ main {
     color: #f8fafc;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+.page-hero {
+    height: 65vh;
+    min-height: 520px;
+    max-height: 720px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0;
+    position: relative;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding: 20px;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 18px;
+    opacity: 0.95;
 }
 
 .hero-description {
@@ -660,10 +741,6 @@ main {
 
 .hero-home {
     background-image: url("../img/MilaViolin15.webp");
-}
-
-.hero-about {
-    background-image: url("../img/MilaViolin12.webp");
 }
 
 .hero-pricing {
@@ -748,12 +825,33 @@ main {
 /* Footer */
 .site-footer {
     border-top: 1px solid #e5e7eb;
-    padding: 40px 0;
+    padding: 40px 20px;
     text-align: center;
+    font-size: 14px;
+    color: #555;
 }
 
 .site-footer p {
     margin-bottom: 0.45rem;
+}
+
+.footer-credit {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.footer-credit a {
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 10px;
 }
 
 .site-footer a {
