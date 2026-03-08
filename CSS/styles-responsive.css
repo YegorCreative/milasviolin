@@ -79,12 +79,40 @@
         max-width: 100%;
     }
 
+    .meet-mila-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .meet-mila-text h2 {
+        font-size: 36px;
+    }
+
+    .artist-bio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-bio-photo {
+        order: 1;
+    }
+
+    .artist-bio-text {
+        order: 2;
+    }
+
     .about-artist-layout {
         grid-template-columns: 1fr;
     }
 
     .about-gallery {
         grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .gallery-image img {
+        max-width: 100%;
+        height: auto;
     }
 
     .testimonials blockquote {
