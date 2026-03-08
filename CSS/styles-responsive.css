@@ -79,17 +79,15 @@
         max-width: 100%;
     }
 
-    .meet-mila-container {
+    .meet-mila-container,
+    .artist-bio-container,
+    .about-gallery {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .meet-mila-text h2 {
         font-size: 36px;
-    }
-
-    .artist-bio-container {
-        grid-template-columns: 1fr;
     }
 
     .artist-bio-photo {
@@ -105,8 +103,6 @@
     }
 
     .about-gallery {
-        grid-template-columns: 1fr;
-        gap: 40px;
         text-align: center;
     }
 

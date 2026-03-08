@@ -62,6 +62,7 @@ blockquote {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
     border-radius: 12px;
 }
 
@@ -198,8 +199,8 @@ main {
 }
 
 .meet-mila-section {
-    padding: 120px 0;
-    background: #f6f3ee;
+    padding: 90px 0;
+    background: #f7f4ef;
 }
 
 .meet-mila-container {
@@ -214,14 +215,13 @@ main {
 
 .meet-mila-text h2 {
     font-size: 48px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .meet-mila-text p {
     font-size: 18px;
     line-height: 1.8;
     color: #444;
-    max-width: 520px;
 }
 
 .section-accent-line {
@@ -233,7 +233,7 @@ main {
 
 .meet-mila-photo img {
     width: 100%;
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
@@ -258,7 +258,7 @@ main {
     align-items: center;
     gap: 50px;
     max-width: 1200px;
-    margin: 40px auto 40px auto;
+    margin: 50px auto 40px auto;
     padding: 0 40px;
 }
 
@@ -270,10 +270,10 @@ main {
 .gallery-image img {
     width: 100%;
     max-width: 420px;
-    height: 520px;
+    height: 500px;
     object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-quote {
@@ -300,10 +300,9 @@ main {
 }
 
 .artist-bio-section {
-    margin-top: 60px;
+    margin-top: 80px;
     padding-top: 60px;
-    padding-bottom: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .artist-bio-container {
@@ -323,13 +322,54 @@ main {
 }
 
 .artist-bio-text h2 {
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
 .artist-bio-text p {
     line-height: 1.8;
-    font-size: 18px;
+    font-size: 17px;
     color: #444;
+}
+
+.about-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    text-wrap: balance;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.about-hero h1 {
+    font-size: 56px;
+    margin-bottom: 10px;
+    text-wrap: balance;
+}
+
+.about-hero p {
+    font-size: 20px;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
