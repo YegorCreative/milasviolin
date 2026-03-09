@@ -1034,3 +1034,61 @@ body {
 }
 
 }
+@media (max-width: 768px) {
+    p, 
+    h1, 
+    h2, 
+    h3 {
+        min-width: 0;
+    }
+
+    .about-highlight, 
+    .about-grid, 
+    .featured, 
+    .services-grid, 
+    .gallery-grid, 
+    .review-grid, 
+    .info-grid, 
+    .pricing-grid, 
+    .stories-grid, 
+    .bio-grid, 
+    .about-artist-layout, 
+    .artist-bio-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .artist-bio-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    
+    .artist-bio-intro,
+    .artist-bio-rest {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .parallax-section {
+        height: auto !important;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+    
+    .parallax-overlay {
+        height: auto !important;
+        padding: 30px 20px !important;
+        margin: 0 !important;
+        width: 100%;
+    }
+}
