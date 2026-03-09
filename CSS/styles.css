@@ -1691,9 +1691,13 @@ main>section.page-hero.about-hero:first-child {
 /* Full-width Image Banner */
 .stories-banner {
     position: relative;
-    width: 100%;
+    width: calc(100% - 80px);
+    max-width: 1200px;
     height: 420px;
     overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    margin: 0 auto;
 }
 
 .stories-banner-img {
@@ -1714,6 +1718,7 @@ main>section.page-hero.about-hero:first-child {
     align-items: center;
     text-align: center;
     padding: 40px 60px;
+    border-radius: 25px;
 }
 
 .stories-banner-overlay--bottom {
