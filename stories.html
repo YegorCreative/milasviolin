@@ -195,7 +195,38 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js"></script>
-  <button id="backToTop" type="button" aria-label="Back to top">↑</button>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script>
+    var mybutton = document.getElementById("myBtn");
+    var scrollArea = document.querySelector(".scroll-area");
+
+    window.addEventListener("scroll", scrollFunction, { passive: true });
+
+    function scrollFunction() {
+      var pageTop = document.body.scrollTop || document.documentElement.scrollTop || 0;
+      var areaTop = scrollArea ? scrollArea.scrollTop : 0;
+      if (pageTop > 20 || areaTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    if (scrollArea) {
+      scrollArea.addEventListener("scroll", scrollFunction, { passive: true });
+    }
+
+    function topFunction() {
+      if (scrollArea) {
+        scrollArea.scrollTop = 0;
+      }
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      window.scrollTo(0, 0);
+    }
+
+    scrollFunction();
+  </script>
 
   <script>
     // Scroll fade-in animation observer
