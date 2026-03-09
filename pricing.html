@@ -196,6 +196,38 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js"></script>
   <button id="backToTop" type="button" aria-label="Back to top">↑</button>
+  <script>
+    (function () {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      // Show when user scrolls past hero
+      var hero = document.querySelector('.hero, .page-hero, main > section:first-child');
+      if (hero) {
+        new IntersectionObserver(function (entries) {
+          btn.classList.toggle('at-top', entries[0].isIntersecting);
+        }, { threshold: 0 }).observe(hero);
+      } else {
+        btn.classList.remove('at-top');
+      }
+      // Smooth scroll using rAF - works on all browsers including file://
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var scrollArea = document.querySelector('.scroll-area');
+        // Pick whichever container is actually scrolled
+        var el = (scrollArea && scrollArea.scrollTop > 0) ? scrollArea : document.documentElement;
+        var start = el.scrollTop;
+        if (start === 0 && window.scrollY > 0) { el = document.documentElement; start = window.scrollY; }
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var p = Math.min((ts - startTime) / 750, 1);
+          el.scrollTop = start * (1 - (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    })();
+  </script>
 </body>
 
 </html>
