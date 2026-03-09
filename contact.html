@@ -1,142 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Mila's Violin</title>
   <link rel="icon" type="image/png" href="./img/Mila Violin-1.png">
   <link rel="shortcut icon" href="./img/Mila Violin-1.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="stylesheet" href="CSS/styles-responsive.css">
 </head>
+
 <body>
   <div class="site-frame">
     <header id="header" class="site-header header"></header>
 
     <div class="scroll-area">
-    <main>
-      <section class="hero hero-contact" aria-labelledby="contact-page-hero-title">
-        <div class="hero-overlay">
-          <div class="hero-content container">
-            <h1 id="contact-page-hero-title">Get in Touch</h1>
-            <p class="hero-subtitle">Let's create something beautiful together for your event or violin journey.</p>
+      <main class="contact-page-wrapper">
+        <section class="hero hero-contact" aria-labelledby="contact-page-hero-title">
+          <div class="hero-overlay">
+            <div class="hero-content container">
+              <h1 id="contact-page-hero-title">Get in Touch</h1>
+              <p class="hero-subtitle">Let's create something beautiful together for your event or violin journey.</p>
+            </div>
           </div>
-        </div>
-      </section>
-
-    <section class="content-section page-section" aria-labelledby="contact-hero-title">
-      <div class="container">
-        <h2 id="contact-hero-title">Contact Mila</h2>
-        <p>Bring the elegance of live violin music to your special event.</p>
-        <p>Whether you're planning a wedding, corporate event, private party, or looking for personalized violin lessons, Mila would love to hear from you. Share a few details about your event or lesson request and Mila will get back to you as soon as possible.</p>
-      </div>
-    </section>
-
-    <section class="content-section page-section" aria-labelledby="contact-intro-title">
-      <div class="container">
-        <h2 id="contact-intro-title">Let's Create Something Beautiful Together</h2>
-        <p>Music has the power to transform moments into lasting memories. Mila’s violin performances bring elegance, emotion, and artistry to every occasion. Whether you're celebrating a wedding, hosting an intimate gathering, organizing a corporate event, or beginning your journey with violin lessons, Mila is happy to help create the perfect musical atmosphere for your event.</p>
-        <p>Fill out the form below and provide a few details about your event, and Mila will personally respond to discuss availability and options.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="content-section contact page-section" aria-labelledby="contact-information-title">
-      <div class="container">
-        <h2 id="contact-information-title">Contact Information</h2>
-        <div class="contact-card">
-          <p>Email: info@milasviolin.com</p>
-          <p>Phone: (000) 000-0000</p>
-          <p>Location: Los Angeles, California</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section page-section" aria-labelledby="inquiry-form-title">
-      <div class="container">
-        <div class="contact-welcome-image-wrap">
-          <img src="img/MilaViolin8.png" alt="Welcoming portrait of Mila with violin" loading="lazy" class="contact-welcome-image">
-        </div>
-        <h2 id="inquiry-form-title">Event Inquiry Form</h2>
-        <p>Please fill out the form below with your event details, preferred date, and any special requests. Mila will review your inquiry and respond shortly.</p>
-
-        <section class="contact-form-section" aria-labelledby="booking-form-title">
-          <h3 id="booking-form-title">Book Mila for Your Event</h3>
-          <p>Please fill out the form below with your event details. Mila will review your request and respond with availability and pricing.</p>
-
-          <iframe name="google-form-target" title="Google Form submission target" hidden></iframe>
-          <!-- Google Form action URL is set below. Replace with a new /formResponse URL if the backend form changes. -->
-          <form class="contact-form" id="booking-form" action="https://docs.google.com/forms/d/e/1FAIpQLScWEc7HTlOT7mR8DnjST1xuDDFcMOFgw4bMbIJc4DpyQxlduw/formResponse" method="POST" target="google-form-target" novalidate>
-            <div class="form-group">
-              <label for="full-name">Full Name *</label>
-              <input id="full-name" name="fullName" type="text" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email-address">Email Address *</label>
-              <input id="email-address" name="email" type="email" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone-number">Phone Number</label>
-              <input id="phone-number" name="phone" type="tel">
-            </div>
-
-            <div class="form-group">
-              <label for="event-type">Event Type</label>
-              <select id="event-type" name="eventType">
-                <option value="Wedding">Wedding</option>
-                <option value="Private Party">Private Party</option>
-                <option value="Corporate Event">Corporate Event</option>
-                <option value="Birthday">Birthday</option>
-                <option value="Violin Lessons">Violin Lessons</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="event-date">Event Date</label>
-              <input id="event-date" name="eventDate" type="date">
-            </div>
-
-            <div class="form-group">
-              <label for="event-location">Event Location</label>
-              <input id="event-location" name="eventLocation" type="text">
-            </div>
-
-            <div class="form-group">
-              <label for="performance-duration">Performance Duration</label>
-              <select id="performance-duration" name="duration">
-                <option value="1 hour">1 hour</option>
-                <option value="2 hours">2 hours</option>
-                <option value="3 hours">3 hours</option>
-                <option value="Private Lesson">Private Lesson</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="additional-notes">Additional Notes</label>
-              <textarea id="additional-notes" name="notes" rows="5"></textarea>
-            </div>
-
-            <!-- Google Forms entry mapping. This form currently accepts one text entry payload. -->
-            <input type="hidden" id="google-form-payload" name="entry.1607679336" value="">
-
-            <button type="submit">Send Inquiry</button>
-          </form>
         </section>
-      </div>
-    </section>
 
-    <section class="content-section page-section" aria-labelledby="contact-cta-title">
-      <div class="container">
-        <h2 id="contact-cta-title">Let Music Elevate Your Moment</h2>
-        <p>Every event deserves a soundtrack that reflects its beauty and emotion. Mila’s violin performances create an atmosphere of elegance that guests remember long after the event ends. Reach out today and start planning a musical experience that will make your occasion truly unforgettable.</p>
-      </div>
-    </section>
-    </main>
+        <section class="content-section page-section" aria-labelledby="contact-hero-title">
+          <div class="container">
+            <h2 id="contact-hero-title">Contact Mila</h2>
+            <p>Bring the elegance of live violin music to your special event.</p>
+            <p>Whether you're planning a wedding, corporate event, private party, or looking for personalized violin
+              lessons, Mila would love to hear from you. Share a few details about your event or lesson request and Mila
+              will get back to you as soon as possible.</p>
+          </div>
+        </section>
 
-    <footer id="footer" class="site-footer"></footer>
+        <section class="content-section page-section" aria-labelledby="contact-intro-title">
+          <div class="container">
+            <h2 id="contact-intro-title">Let's Create Something Beautiful Together</h2>
+            <p>Music has the power to transform moments into lasting memories. Mila’s violin performances bring
+              elegance, emotion, and artistry to every occasion. Whether you're celebrating a wedding, hosting an
+              intimate gathering, organizing a corporate event, or beginning your journey with violin lessons, Mila is
+              happy to help create the perfect musical atmosphere for your event.</p>
+            <p>Fill out the form below and provide a few details about your event, and Mila will personally respond to
+              discuss availability and options.</p>
+          </div>
+        </section>
+
+        <section id="contact" class="content-section contact page-section" aria-labelledby="contact-information-title">
+          <div class="container">
+            <h2 id="contact-information-title">Contact Information</h2>
+            <div class="contact-card">
+              <p>Email: info@milasviolin.com</p>
+              <p>Phone: (000) 000-0000</p>
+              <p>Location: Los Angeles, California</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section page-section" aria-labelledby="inquiry-form-title">
+          <div class="container">
+            <div class="contact-welcome-image-wrap">
+              <img src="img/MilaViolin8.png" alt="Welcoming portrait of Mila with violin" loading="lazy"
+                class="contact-welcome-image">
+            </div>
+            <h2 id="inquiry-form-title">Event Inquiry Form</h2>
+            <p>Please fill out the form below with your event details, preferred date, and any special requests. Mila
+              will review your inquiry and respond shortly.</p>
+
+            <section class="contact-form-section" aria-labelledby="booking-form-title">
+              <h3 id="booking-form-title">Book Mila for Your Event</h3>
+              <p>Please fill out the form below with your event details. Mila will review your request and respond with
+                availability and pricing.</p>
+
+              <iframe name="google-form-target" title="Google Form submission target" hidden></iframe>
+              <!-- Google Form action URL is set below. Replace with a new /formResponse URL if the backend form changes. -->
+              <form class="contact-form" id="booking-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLScWEc7HTlOT7mR8DnjST1xuDDFcMOFgw4bMbIJc4DpyQxlduw/formResponse"
+                method="POST" target="google-form-target" novalidate>
+                <div class="form-group">
+                  <label for="full-name">Full Name *</label>
+                  <input id="full-name" name="fullName" type="text" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="email-address">Email Address *</label>
+                  <input id="email-address" name="email" type="email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone-number">Phone Number</label>
+                  <input id="phone-number" name="phone" type="tel">
+                </div>
+
+                <div class="form-group">
+                  <label for="event-type">Event Type</label>
+                  <select id="event-type" name="eventType">
+                    <option value="Wedding">Wedding</option>
+                    <option value="Private Party">Private Party</option>
+                    <option value="Corporate Event">Corporate Event</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Violin Lessons">Violin Lessons</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="event-date">Event Date</label>
+                  <input id="event-date" name="eventDate" type="date">
+                </div>
+
+                <div class="form-group">
+                  <label for="event-location">Event Location</label>
+                  <input id="event-location" name="eventLocation" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="performance-duration">Performance Duration</label>
+                  <select id="performance-duration" name="duration">
+                    <option value="1 hour">1 hour</option>
+                    <option value="2 hours">2 hours</option>
+                    <option value="3 hours">3 hours</option>
+                    <option value="Private Lesson">Private Lesson</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="additional-notes">Additional Notes</label>
+                  <textarea id="additional-notes" name="notes" rows="5"></textarea>
+                </div>
+
+                <!-- Google Forms entry mapping. This form currently accepts one text entry payload. -->
+                <input type="hidden" id="google-form-payload" name="entry.1607679336" value="">
+
+                <button type="submit">Send Inquiry</button>
+              </form>
+            </section>
+          </div>
+        </section>
+
+        <section class="content-section page-section" aria-labelledby="contact-cta-title">
+          <div class="container">
+            <h2 id="contact-cta-title">Let Music Elevate Your Moment</h2>
+            <p>Every event deserves a soundtrack that reflects its beauty and emotion. Mila’s violin performances create
+              an atmosphere of elegance that guests remember long after the event ends. Reach out today and start
+              planning a musical experience that will make your occasion truly unforgettable.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer" class="site-footer"></footer>
     </div>
   </div>
 
@@ -144,4 +161,5 @@
   <script src="js/script.js"></script>
   <button id="backToTop" aria-label="Back to top">↑</button>
 </body>
+
 </html>
