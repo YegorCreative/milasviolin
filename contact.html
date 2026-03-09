@@ -54,10 +54,15 @@
         <section id="contact" class="content-section contact page-section" aria-labelledby="contact-information-title">
           <div class="container">
             <h2 id="contact-information-title">Contact Information</h2>
-            <div class="contact-card">
-              <p>Email: info@milasviolin.com</p>
-              <p>Phone: (000) 000-0000</p>
-              <p>Location: Los Angeles, California</p>
+            <div class="contact-card contact-card-split">
+              <div class="contact-card-clef" aria-hidden="true">
+                <span class="dancing-clef dancing-clef-white">&#119070;</span>
+              </div>
+              <div class="contact-card-info">
+                <p>Email: <a href="mailto:info@milasviolin.com" class="contact-link">info@milasviolin.com</a></p>
+                <p>Phone: <a href="tel:+19719305995" class="contact-link">+1 (971) 930-5995</a></p>
+                <p>Location: Los Angeles, California</p>
+              </div>
             </div>
           </div>
         </section>
@@ -65,81 +70,85 @@
         <section class="content-section page-section" aria-labelledby="inquiry-form-title">
           <div class="container">
             <div class="contact-welcome-image-wrap">
-              <img src="img/MilaViolin8.png" alt="Welcoming portrait of Mila with violin" loading="lazy"
-                class="contact-welcome-image">
+              <img src="img/MilaViolin23.webp" alt="Welcoming portrait of Mila with violin" loading="lazy"
+                class="contact-welcome-image"
+                style="border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); width: 100%; height: 350px; object-fit: cover; object-position: center 25%;">
             </div>
             <h2 id="inquiry-form-title">Event Inquiry Form</h2>
             <p>Please fill out the form below with your event details, preferred date, and any special requests. Mila
               will review your inquiry and respond shortly.</p>
 
-            <section class="contact-form-section" aria-labelledby="booking-form-title">
-              <h3 id="booking-form-title">Book Mila for Your Event</h3>
-              <p>Please fill out the form below with your event details. Mila will review your request and respond with
-                availability and pricing.</p>
+            <div class="form-gradient-wrap">
+              <section class="contact-form-section" aria-labelledby="booking-form-title">
+                <h3 id="booking-form-title">Book Mila for Your Event</h3>
+                <p>Please fill out the form below with your event details. Mila will review your request and respond
+                  with
+                  availability and pricing.</p>
 
-              <iframe name="google-form-target" title="Google Form submission target" hidden></iframe>
-              <!-- Google Form action URL is set below. Replace with a new /formResponse URL if the backend form changes. -->
-              <form class="contact-form" id="booking-form"
-                action="https://docs.google.com/forms/d/e/1FAIpQLScWEc7HTlOT7mR8DnjST1xuDDFcMOFgw4bMbIJc4DpyQxlduw/formResponse"
-                method="POST" target="google-form-target" novalidate>
-                <div class="form-group">
-                  <label for="full-name">Full Name *</label>
-                  <input id="full-name" name="fullName" type="text" required>
-                </div>
+                <iframe name="google-form-target" title="Google Form submission target" hidden></iframe>
+                <!-- Google Form action URL is set below. Replace with a new /formResponse URL if the backend form changes. -->
+                <form class="contact-form" id="booking-form"
+                  action="https://docs.google.com/forms/d/e/1FAIpQLScWEc7HTlOT7mR8DnjST1xuDDFcMOFgw4bMbIJc4DpyQxlduw/formResponse"
+                  method="POST" target="google-form-target" novalidate>
+                  <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input id="full-name" name="fullName" type="text" required>
+                  </div>
 
-                <div class="form-group">
-                  <label for="email-address">Email Address *</label>
-                  <input id="email-address" name="email" type="email" required>
-                </div>
+                  <div class="form-group">
+                    <label for="email-address">Email Address *</label>
+                    <input id="email-address" name="email" type="email" required>
+                  </div>
 
-                <div class="form-group">
-                  <label for="phone-number">Phone Number</label>
-                  <input id="phone-number" name="phone" type="tel">
-                </div>
+                  <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input id="phone-number" name="phone" type="tel">
+                  </div>
 
-                <div class="form-group">
-                  <label for="event-type">Event Type</label>
-                  <select id="event-type" name="eventType">
-                    <option value="Wedding">Wedding</option>
-                    <option value="Private Party">Private Party</option>
-                    <option value="Corporate Event">Corporate Event</option>
-                    <option value="Birthday">Birthday</option>
-                    <option value="Violin Lessons">Violin Lessons</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                    <label for="event-type">Event Type</label>
+                    <select id="event-type" name="eventType">
+                      <option value="Wedding">Wedding</option>
+                      <option value="Private Party">Private Party</option>
+                      <option value="Corporate Event">Corporate Event</option>
+                      <option value="Birthday">Birthday</option>
+                      <option value="Violin Lessons">Violin Lessons</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
 
-                <div class="form-group">
-                  <label for="event-date">Event Date</label>
-                  <input id="event-date" name="eventDate" type="date">
-                </div>
+                  <div class="form-group">
+                    <label for="event-date">Event Date</label>
+                    <input id="event-date" name="eventDate" type="date">
+                  </div>
 
-                <div class="form-group">
-                  <label for="event-location">Event Location</label>
-                  <input id="event-location" name="eventLocation" type="text">
-                </div>
+                  <div class="form-group">
+                    <label for="event-location">Event Location</label>
+                    <input id="event-location" name="eventLocation" type="text">
+                  </div>
 
-                <div class="form-group">
-                  <label for="performance-duration">Performance Duration</label>
-                  <select id="performance-duration" name="duration">
-                    <option value="1 hour">1 hour</option>
-                    <option value="2 hours">2 hours</option>
-                    <option value="3 hours">3 hours</option>
-                    <option value="Private Lesson">Private Lesson</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                    <label for="performance-duration">Performance Duration</label>
+                    <select id="performance-duration" name="duration">
+                      <option value="1 hour">1 hour</option>
+                      <option value="2 hours">2 hours</option>
+                      <option value="3 hours">3 hours</option>
+                      <option value="Private Lesson">Private Lesson</option>
+                    </select>
+                  </div>
 
-                <div class="form-group">
-                  <label for="additional-notes">Additional Notes</label>
-                  <textarea id="additional-notes" name="notes" rows="5"></textarea>
-                </div>
+                  <div class="form-group">
+                    <label for="additional-notes">Additional Notes</label>
+                    <textarea id="additional-notes" name="notes" rows="5"></textarea>
+                  </div>
 
-                <!-- Google Forms entry mapping. This form currently accepts one text entry payload. -->
-                <input type="hidden" id="google-form-payload" name="entry.1607679336" value="">
+                  <!-- Google Forms entry mapping. This form currently accepts one text entry payload. -->
+                  <input type="hidden" id="google-form-payload" name="entry.1607679336" value="">
 
-                <button type="submit">Send Inquiry</button>
-              </form>
-            </section>
+                  <button type="submit">Send Inquiry</button>
+                </form>
+              </section>
+            </div>
           </div>
         </section>
 
@@ -149,6 +158,24 @@
             <p>Every event deserves a soundtrack that reflects its beauty and emotion. Mila’s violin performances create
               an atmosphere of elegance that guests remember long after the event ends. Reach out today and start
               planning a musical experience that will make your occasion truly unforgettable.</p>
+          </div>
+        </section>
+
+        <!-- Musical Notes Animation -->
+        <section class="musical-animation-section content-section" aria-hidden="true"
+          style="padding-top: 10px; padding-bottom: 50px;">
+          <div class="container">
+            <div class="violin-strings-container">
+              <div class="violin-string"></div>
+              <div class="violin-string"></div>
+              <div class="violin-string"></div>
+              <div class="violin-string"></div>
+              <div class="musical-note note-1">&#119070;</div>
+              <div class="musical-note note-2">&#9834;</div>
+              <div class="musical-note note-3">&#9833;</div>
+              <div class="musical-note note-4">&#9835;</div>
+              <div class="musical-note note-5">&#9834;</div>
+            </div>
           </div>
         </section>
       </main>
