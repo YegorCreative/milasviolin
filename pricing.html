@@ -200,20 +200,26 @@
     var mybutton = document.getElementById("myBtn");
     var scrollArea = document.querySelector(".scroll-area");
 
-    window.addEventListener("scroll", scrollFunction, { passive: true });
+    window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+    window.addEventListener("resize", updateBackToTopVisibility, { passive: true });
 
-    function scrollFunction() {
-      var pageTop = document.body.scrollTop || document.documentElement.scrollTop || 0;
+    function getScrollTop() {
+      var pageTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
       var areaTop = scrollArea ? scrollArea.scrollTop : 0;
-      if (pageTop > 20 || areaTop > 20) {
-        mybutton.style.display = "block";
+      return Math.max(pageTop, areaTop);
+    }
+
+    function updateBackToTopVisibility() {
+      var currentTop = getScrollTop();
+      if (currentTop > 20) {
+        mybutton.style.display = "flex";
       } else {
         mybutton.style.display = "none";
       }
     }
 
     if (scrollArea) {
-      scrollArea.addEventListener("scroll", scrollFunction, { passive: true });
+      scrollArea.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
     }
 
     function topFunction() {
@@ -225,7 +231,7 @@
       window.scrollTo(0, 0);
     }
 
-    scrollFunction();
+    updateBackToTopVisibility();
   </script>
 </body>
 

@@ -123,52 +123,6 @@ function initializeContactForm() {
 }
 
 
-function topFunction() {
-    const scrollArea = document.querySelector('.scroll-area');
-
-    if (scrollArea) {
-        scrollArea.scrollTop = 0;
-    }
-
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    window.scrollTo(0, 0);
-}
-
-window.topFunction = topFunction;
-
-function initializeBackToTopButton() {
-    const mybutton = document.getElementById('myBtn');
-    if (!mybutton) {
-        return;
-    }
-
-    const scrollArea = document.querySelector('.scroll-area');
-
-    function getScrollTop() {
-        const areaTop = scrollArea ? scrollArea.scrollTop : 0;
-        const pageTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
-        return Math.max(areaTop, pageTop);
-    }
-
-    function scrollFunction() {
-        mybutton.style.display = getScrollTop() > 20 ? 'block' : 'none';
-    }
-
-    window.addEventListener('scroll', scrollFunction, { passive: true });
-
-    if (scrollArea) {
-        scrollArea.addEventListener('scroll', scrollFunction, { passive: true });
-    }
-
-    mybutton.addEventListener('click', function (event) {
-        event.preventDefault();
-        topFunction();
-    });
-
-    scrollFunction();
-}
-
 function initializeAutoHideNavbar() {
 
     const header = document.querySelector('.site-header');
