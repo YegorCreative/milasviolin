@@ -127,36 +127,31 @@ function initializeBackToTopButton() {
     const scrollArea = document.querySelector('.scroll-area');
     const backToTop = document.getElementById('backToTop');
 
-    if (!backToTop) {
-        return;
-    }
+    if (!backToTop) return;
 
     function checkScroll() {
         const scrolled = Math.max(
             scrollArea ? scrollArea.scrollTop : 0,
             window.scrollY || 0
         );
-        if (scrolled > 400) {
-            backToTop.classList.add('show');
+        if (scrolled < 100) {
+            backToTop.classList.add('at-top');
         } else {
-            backToTop.classList.remove('show');
+            backToTop.classList.remove('at-top');
         }
     }
 
-    // Listen on scroll-area custom scroller
+    // Start hidden at page load (user is at top)
+    backToTop.classList.add('at-top');
+
     if (scrollArea) {
         scrollArea.addEventListener('scroll', checkScroll, { passive: true });
     }
-
-    // Also listen on window as fallback
     window.addEventListener('scroll', checkScroll, { passive: true });
 
     backToTop.addEventListener('click', () => {
-        if (scrollArea) {
-            scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 

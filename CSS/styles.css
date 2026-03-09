@@ -1326,8 +1326,8 @@ main>section.page-hero.about-hero:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.25s ease;
     box-shadow: 0 4px 14px rgba(43, 69, 43, 0.35);
     z-index: 9999;
@@ -1337,9 +1337,9 @@ main>section.page-hero.about-hero:first-child {
     transform: translateY(-3px);
 }
 
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
+#backToTop.at-top {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* ------------- PRICING REDESIGN (Premium Look) ------------- */
