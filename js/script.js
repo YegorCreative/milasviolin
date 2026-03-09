@@ -127,34 +127,41 @@ function initializeBackToTopButton() {
     const backToTop = document.getElementById('backToTop');
     if (!backToTop) return;
 
-    // Use the first section (hero) as the sentinel — when it leaves view, show the button
-    const sentinel = document.querySelector('main > section:first-child, main > .hero, .hero');
+    // --- Smooth scroll using requestAnimationFrame (works on file:// and all browsers) ---
+    function smoothScrollToTop(container, duration) {
+        const start = container.scrollTop;
+        if (start === 0) return;
+        const startTime = performance.now();
 
-    if (sentinel) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    backToTop.classList.add('at-top'); // at hero → hide button
-                } else {
-                    backToTop.classList.remove('at-top'); // scrolled past hero → show button
-                }
-            });
-        }, { threshold: 0 });
-
-        observer.observe(sentinel);
-    } else {
-        // No sentinel found — just always show the button
-        backToTop.classList.remove('at-top');
+        function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            container.scrollTop = start * (1 - ease);
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
     }
 
-    // Click scrolls back to top smoothly
+    // --- Show/hide via IntersectionObserver on the hero section ---
+    const hero = document.querySelector('.hero, .page-hero, main > section:first-child');
+    if (hero) {
+        const io = new IntersectionObserver((entries) => {
+            backToTop.classList.toggle('at-top', entries[0].isIntersecting);
+        }, { threshold: 0 });
+        io.observe(hero);
+    }
+
+    // --- Click: smooth scroll back to top ---
     backToTop.addEventListener('click', (e) => {
         e.preventDefault();
         const scrollArea = document.querySelector('.scroll-area');
-        if (scrollArea) {
-            scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (scrollArea && scrollArea.scrollTop > 0) {
+            smoothScrollToTop(scrollArea, 700);
+        } else if (window.scrollY > 0) {
+            // Fallback: animate window scroll
+            smoothScrollToTop(document.documentElement, 700);
         }
     });
 }
