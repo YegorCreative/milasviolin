@@ -124,34 +124,38 @@ function initializeContactForm() {
 
 
 function initializeBackToTopButton() {
-    const scrollArea = document.querySelector('.scroll-area');
     const backToTop = document.getElementById('backToTop');
-
     if (!backToTop) return;
 
-    function checkScroll() {
-        const scrolled = Math.max(
-            scrollArea ? scrollArea.scrollTop : 0,
-            window.scrollY || 0
-        );
-        if (scrolled < 100) {
-            backToTop.classList.add('at-top');
+    // Use the first section (hero) as the sentinel — when it leaves view, show the button
+    const sentinel = document.querySelector('main > section:first-child, main > .hero, .hero');
+
+    if (sentinel) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    backToTop.classList.add('at-top'); // at hero → hide button
+                } else {
+                    backToTop.classList.remove('at-top'); // scrolled past hero → show button
+                }
+            });
+        }, { threshold: 0 });
+
+        observer.observe(sentinel);
+    } else {
+        // No sentinel found — just always show the button
+        backToTop.classList.remove('at-top');
+    }
+
+    // Click scrolls back to top smoothly
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        const scrollArea = document.querySelector('.scroll-area');
+        if (scrollArea) {
+            scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            backToTop.classList.remove('at-top');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    }
-
-    // Start hidden at page load (user is at top)
-    backToTop.classList.add('at-top');
-
-    if (scrollArea) {
-        scrollArea.addEventListener('scroll', checkScroll, { passive: true });
-    }
-    window.addEventListener('scroll', checkScroll, { passive: true });
-
-    backToTop.addEventListener('click', () => {
-        if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
