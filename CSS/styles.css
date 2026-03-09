@@ -1313,24 +1313,24 @@ main>section.page-hero.about-hero:first-child {
 
 #backToTop {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
+    bottom: calc(var(--frame-gap) + 16px);
+    right: calc(var(--frame-gap) + 16px);
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: none;
-    background: #1f2937;
+    background: linear-gradient(135deg, #2b452b 0%, #1e331e 100%);
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    z-index: 120;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.25s ease;
+    box-shadow: 0 4px 14px rgba(43, 69, 43, 0.35);
+    z-index: 9999;
 }
 
 #backToTop:hover {

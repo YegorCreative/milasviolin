@@ -127,60 +127,73 @@ function initializeBackToTopButton() {
     const scrollArea = document.querySelector('.scroll-area');
     const backToTop = document.getElementById('backToTop');
 
-    if (!scrollArea || !backToTop) {
+    if (!backToTop) {
         return;
     }
 
-    scrollArea.addEventListener('scroll', () => {
-        if (scrollArea.scrollTop > 400) {
+    function checkScroll() {
+        const scrolled = Math.max(
+            scrollArea ? scrollArea.scrollTop : 0,
+            window.scrollY || 0
+        );
+        if (scrolled > 400) {
             backToTop.classList.add('show');
         } else {
             backToTop.classList.remove('show');
         }
-    });
+    }
+
+    // Listen on scroll-area custom scroller
+    if (scrollArea) {
+        scrollArea.addEventListener('scroll', checkScroll, { passive: true });
+    }
+
+    // Also listen on window as fallback
+    window.addEventListener('scroll', checkScroll, { passive: true });
 
     backToTop.addEventListener('click', () => {
-        scrollArea.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        if (scrollArea) {
+            scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     });
 }
 
-function initializeAutoHideNavbar(){
+function initializeAutoHideNavbar() {
 
-const header=document.querySelector('.site-header');
-const scrollArea=document.querySelector('.scroll-area');
+    const header = document.querySelector('.site-header');
+    const scrollArea = document.querySelector('.scroll-area');
 
-if(!header)return;
+    if (!header) return;
 
-let lastScroll=0;
-const revealPoint=120;
+    let lastScroll = 0;
+    const revealPoint = 120;
 
-function getScroll(){
-return scrollArea?scrollArea.scrollTop:window.scrollY;
-}
+    function getScroll() {
+        return scrollArea ? scrollArea.scrollTop : window.scrollY;
+    }
 
-function handleScroll(){
+    function handleScroll() {
 
-const current=getScroll();
+        const current = getScroll();
 
-if(current>lastScroll){
-header.classList.add('navbar-hidden');
-}
+        if (current > lastScroll) {
+            header.classList.add('navbar-hidden');
+        }
 
-if(current<revealPoint){
-header.classList.remove('navbar-hidden');
-}
+        if (current < revealPoint) {
+            header.classList.remove('navbar-hidden');
+        }
 
-lastScroll=current;
-}
+        lastScroll = current;
+    }
 
-if(scrollArea){
-scrollArea.addEventListener('scroll',handleScroll);
-}else{
-window.addEventListener('scroll',handleScroll);
-}
+    if (scrollArea) {
+        scrollArea.addEventListener('scroll', handleScroll);
+    } else {
+        window.addEventListener('scroll', handleScroll);
+    }
 
 }
 
