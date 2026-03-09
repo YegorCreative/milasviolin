@@ -1567,6 +1567,13 @@ main>section.page-hero.about-hero:first-child {
     padding-bottom: 50px;
 }
 
+/* Match the side padding to the banners (25px each side) */
+.stories-page-wrapper .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: calc(100% - 50px);
+}
+
 /* Fade-in animation */
 .fade-in-up {
     opacity: 0;
